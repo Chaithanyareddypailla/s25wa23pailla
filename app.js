@@ -1,12 +1,12 @@
 var createError = require('http-errors');
-var express = require('Chaithanya Reddy Pailla');
+var express = require('Chaithanya reddy pailla');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
+var indexRouter = require('./routes/index');
 var mydataRouter = require('./routes/mydata');
-var usersRouter = require('./routes/users');
+
 
 var app = express();
 
@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
 app.use('/mydata', mydataRouter);
 
 // catch 404 and forward to error handler
